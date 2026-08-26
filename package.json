@@ -1,0 +1,36 @@
+{
+  "name": "companies-house-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cucumber + TypeScript + Playwright UI automation for Companies House forms and multi-page journeys",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:wizard": "cucumber-js --tags @wizard",
+    "test:search": "cucumber-js --tags @search",
+    "test:headed": "HEADLESS=false cucumber-js",
+    "test:debug": "HEADLESS=false SLOW_MO=250 cucumber-js",
+    "test:parallel": "cucumber-js --parallel 4",
+    "test:trace": "TRACE=true cucumber-js",
+    "trace:show": "playwright show-trace",
+    "postinstall": "playwright install chromium",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf reports"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.13.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.19.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
